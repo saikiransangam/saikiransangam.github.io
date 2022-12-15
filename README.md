@@ -4,10 +4,15 @@ My name is Sai Kiran Sangam, pursued Masters in Computer Science at Old Dominion
 
 Technical Skills
 {} Programming Languages - Java, Python, Golang, C, C++, Javascript, Typescript, Bash, Perl, SQL
+
 🧰 Tools/frameworks - Spring MVC, Spring Boot, Hibernate, JDBC, Gradle, Maven, Git, Jenkins, Apache Airflow, Swagger, Grafana
+
 🗄 Data management systems - PostgreSQL, MySQL, DB2, H2, Sybase, MongoDB, AWS AuroraDB
+
 💻 Web Development - HTML, CSS, Bootstrap, Angular, React, Next.js, Thymeleaf, NodeJS, ExpressJS, GraphQL
+
 ☁ Cloud Technologies - Docker, Kubernetes, AWS (EC2, S3, SQS), Cloudflare
+
 🤓 Other applications/technologies - IBM MQ, Linux/Unix, REST APIs, SOAP services, XML, JSON, XSLT, Jira, Confluence
 
 - 👀 I’m interested in software engineer
