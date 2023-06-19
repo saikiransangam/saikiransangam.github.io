@@ -13,7 +13,7 @@ Technical Skills
 
 🗄 Data management systems - PostgreSQL, MySQL, DB2, H2, Sybase, MongoDB, AWS AuroraDB
 
-💻 Web Development - HTML, CSS, Bootstrap, React, NodeJS, ExpressJS, GraphQL
+💻 Web Development - HTML, CSS, Bootstrap, Spring, Springboot, React, NodeJS, ExpressJS, GraphQL
 
 ☁ Cloud Technologies - Docker, Kubernetes, AWS (EC2, S3, SQS), Cloudflare
 
