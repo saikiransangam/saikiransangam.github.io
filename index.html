@@ -155,7 +155,7 @@
             justify-content: center;
             position: relative;
             background: var(--bg);
-            padding: 0 2rem;
+            padding: 5rem 2rem 2rem;
             overflow: hidden;
         }
 
@@ -181,6 +181,58 @@
             text-align: center;
             z-index: 1;
             animation: fadeInUp 1s ease;
+        }
+
+        .profile-picture-container {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+            animation: float-profile 3s ease-in-out infinite;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        @keyframes float-profile {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .profile-picture-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0.3;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
         }
 
         @keyframes fadeInUp {
@@ -654,6 +706,123 @@
             border-top: 1px solid var(--border);
         }
 
+        /* Resume Modal Styles */
+        .resume-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            animation: fadeInModal 0.3s ease;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .resume-modal.show {
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-close:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-content-resume {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            position: relative;
+        }
+
+        .resume-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-header-resume {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 20px;
+            left: 45px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            z-index: 10000;
+        }
+
+        .download-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -683,6 +852,32 @@
 
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .modal-content-resume {
+                width: 95%;
+                padding: 10px;
+                height: 85vh;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .download-btn {
+                top: 10px;
+                left: 20px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .modal-header-resume {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
             }
         }
 
@@ -717,6 +912,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="SaiKiran_Sangam_Resume.pdf" onclick="openResume(event)">📄 Resume</a></li>
                 <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
             </ul>
         </div>
@@ -725,6 +921,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
+            <div class="profile-picture-container">
+                <img src="saikiran.jpg" alt="Sai Kiran Sangam" class="profile-picture" />
+            </div>
             <h1>Sai Kiran Sangam</h1>
             <p class="subtitle">
                 <span class="typing-effect" id="typing-text">Full Stack Developer</span>
@@ -733,6 +932,7 @@
                 Crafting scalable software solutions with expertise in Full Stack Development and Machine Learning
             </p>
             <div class="hero-buttons">
+                <a href="SaiKiran_Sangam_Resume.pdf" class="btn btn-primary">📄 Resume</a>
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#projects" class="btn btn-outline">View Projects</a>
             </div>
@@ -830,7 +1030,6 @@
                 <h3>☁️ Cloud & DevOps</h3>
                 <div class="skill-tags">
                     <span class="skill-tag"><i class="devicon-amazonwebservices-original colored"></i> AWS</span>
-                    <span class="skill-tag"><i class="devicon-azure-plain colored"></i> Azure</span>
                     <span class="skill-tag"><i class="devicon-googlecloud-plain colored"></i> Google Cloud</span>
                     <span class="skill-tag"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
                     <span class="skill-tag"><i class="devicon-docker-plain colored"></i> Docker</span>
@@ -952,7 +1151,7 @@
                     <span class="tech-badge">ML</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://handson.cs.odu.edu/" class="project-link">🔗 Research</a>
+                    <a href="https://handson.cs.odu.edu/" class="project-link">🔗 Details</a>
                 </div>
             </div>
             
@@ -972,24 +1171,6 @@
                     <a href="https://github.com/saikiransangam/Airbnb-Data-Analysis" class="project-link">🔗 GitHub</a>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Data Science & Machine Learning Projects</h3>
-                </div>
-                <p class="project-description">
-                    Explored data analysis, NLP pipelines, recommender systems, and big data applications using tools like Python, Flask, and Spark.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">ML</span>
-                    <span class="tech-badge">Data Analysis</span>
-                    <span class="tech-badge">Spark</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://handson.cs.odu.edu/" class="project-link">🔗 GitHub</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1007,11 +1188,11 @@
                     <span class="contact-icon">📱</span>
                     <span>(757) 617-3516</span>
                 </a>
-                <a href="https://linkedin.com/saikiransangam" class="contact-item">
+                <a href="https://linkedin.com" class="contact-item">
                     <span class="contact-icon">💼</span>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/saikiransangam" class="contact-item">
+                <a href="https://github.com" class="contact-item">
                     <span class="contact-icon">💻</span>
                     <span>GitHub</span>
                 </a>
@@ -1021,7 +1202,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Sai Kiran Sangam. Crafted with passion and code.</p>
+        <p>&copy; 2024 Sai Kiran Sangam. Crafted with passion and code.</p>
     </footer>
 
     <script>
